@@ -4,7 +4,7 @@ import '../data/cv_data.dart';
 import '../theme/app_theme.dart';
 import '../widgets/section_title.dart';
 
-const _profileImagePath = 'assets/images/foto_perfil.jpg';
+const _profileImagePath = 'assets/images/foto_perfil.png';
 
 class AboutSection extends StatelessWidget {
   const AboutSection({super.key});

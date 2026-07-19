@@ -1,1 +1,0 @@
- D:\\flutter\ projects\\Portafolio\\build\\web\\manifest.json:  D:\\flutter\ projects\\Portafolio\\web\\index.html D:\\flutter\ projects\\Portafolio\\web\\manifest.json
