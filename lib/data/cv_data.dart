@@ -132,7 +132,7 @@ const List<Map<String, dynamic>> projects = [
         "por usuario. Al escanear el QR, muestra información médica y "
         "de contacto de emergencia. Despliegue serverless.",
     "stack": ["Flutter", "QR Generation", "Serverless", "Firebase"],
-    "github": "https://github.com/LuisSuarez89",
+    "github": "https://github.com/LuisSuarez89/SOS-Rider",
     "icono": "🏍️",
   },
   {
@@ -143,7 +143,7 @@ const List<Map<String, dynamic>> projects = [
         "técnico y contacto en tiempo real.",
     "stack": ["Flutter Web", "Cloudflare Workers", "Groq API",
                "GitHub Actions", "GitHub Pages"],
-    "github": "https://github.com/LuisSuarez89/luis-cv",
+    "github": "https://github.com/LuisSuarez89/Portafolio",
     "icono": "💼",
   },
 ];
