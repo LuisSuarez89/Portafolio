@@ -100,3 +100,50 @@ const skillCategories = [
   SkillCategory(name: 'Cloud & Metodologías', skills: ['Azure (AZ-900)', 'ITIL 4', 'Scrum', 'Git', 'GitHub Actions']),
   SkillCategory(name: 'IA aplicada', skills: ['Groq API', 'Prompt Engineering', 'LLM integration', 'Chatbots IA', 'Automatización con IA']),
 ];
+
+const List<Map<String, dynamic>> projects = [
+  {
+    "nombre": "SOS Job Hunter",
+    "descripcion": "Pipeline automatizado de búsqueda de empleo. "
+        "Scrapea ofertas reales de múltiples bolsas de trabajo en "
+        "Colombia, México, Argentina y Chile, las evalúa con IA contra "
+        "un perfil específico, filtra por compatibilidad y salario, y "
+        "envía un correo diario con el análisis. Corre gratis en "
+        "GitHub Actions.",
+    "stack": ["Python", "Groq API", "GitHub Actions", "BeautifulSoup",
+               "Google Apps Script"],
+    "github": "https://github.com/LuisSuarez89/job-search",
+    "icono": "🔍",
+  },
+  {
+    "nombre": "CNSC Watcher",
+    "descripcion": "Monitor semanal de convocatorias de empleo público "
+        "(CNSC/SIMO). Revisa automáticamente las convocatorias en "
+        "desarrollo, evalúa con IA cuáles son relevantes para el perfil "
+        "técnico y notifica solo cuando hay novedades.",
+    "stack": ["Python", "Groq API", "GitHub Actions", "BeautifulSoup"],
+    "github": "https://github.com/LuisSuarez89/job-search",
+    "icono": "🏛️",
+  },
+  {
+    "nombre": "SOS Rider Colombia",
+    "descripcion": "Sistema de identificación de emergencia para "
+        "motociclistas. Genera carnets digitales con código QR único "
+        "por usuario. Al escanear el QR, muestra información médica y "
+        "de contacto de emergencia. Despliegue serverless.",
+    "stack": ["Flutter", "QR Generation", "Serverless", "Firebase"],
+    "github": "https://github.com/LuisSuarez89",
+    "icono": "🏍️",
+  },
+  {
+    "nombre": "CV Interactivo con IA",
+    "descripcion": "Este mismo sitio. Portafolio personal construido en "
+        "Flutter Web con chatbot de IA integrado, desplegado en GitHub "
+        "Pages. El chatbot responde preguntas sobre experiencia, stack "
+        "técnico y contacto en tiempo real.",
+    "stack": ["Flutter Web", "Cloudflare Workers", "Groq API",
+               "GitHub Actions", "GitHub Pages"],
+    "github": "https://github.com/LuisSuarez89/luis-cv",
+    "icono": "💼",
+  },
+];
