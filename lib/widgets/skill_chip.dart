@@ -8,8 +8,8 @@ class SkillChip extends StatelessWidget {
   Widget build(BuildContext context) => Container(
         padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 9),
         decoration: BoxDecoration(
-          color: AppColors.teal.withOpacity(.09),
-          border: Border.all(color: AppColors.teal.withOpacity(.42)),
+          color: AppColors.teal.withValues(alpha: .09),
+          border: Border.all(color: AppColors.teal.withValues(alpha: .42)),
           borderRadius: BorderRadius.circular(999),
         ),
         child: Text(label, style: const TextStyle(color: AppColors.text, fontWeight: FontWeight.w600)),

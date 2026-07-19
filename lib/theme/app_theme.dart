@@ -26,7 +26,7 @@ class AppTheme {
         bodyLarge: GoogleFonts.inter(color: AppColors.text, height: 1.6),
         bodyMedium: GoogleFonts.inter(color: AppColors.muted, height: 1.5),
       ),
-      cardTheme: CardTheme(color: AppColors.card, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24))),
+      cardTheme: CardThemeData(color: AppColors.card, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24))),
       dividerColor: AppColors.border,
       useMaterial3: true,
     );

@@ -16,5 +16,5 @@ class AboutSection extends StatelessWidget {
         const Wrap(spacing: 12, children: [_Badge('Remoto ✓'), _Badge('Híbrido ✓')]),
       ]).animate().fadeIn(duration: 500.ms).slideY(begin: .08));
 }
-class _Badge extends StatelessWidget { const _Badge(this.text); final String text; @override Widget build(BuildContext context)=>Chip(label: Text(text), backgroundColor: AppColors.amber.withOpacity(.16), side: BorderSide(color: AppColors.amber.withOpacity(.55)));}
+class _Badge extends StatelessWidget { const _Badge(this.text); final String text; @override Widget build(BuildContext context)=>Chip(label: Text(text), backgroundColor: AppColors.amber.withValues(alpha: .16), side: BorderSide(color: AppColors.amber.withValues(alpha: .55)));}
 class _Wrap extends StatelessWidget { const _Wrap({required this.child}); final Widget child; @override Widget build(BuildContext context)=>Padding(padding: const EdgeInsets.symmetric(vertical: 42), child: child);}
