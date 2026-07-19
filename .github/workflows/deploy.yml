@@ -3,6 +3,7 @@ name: Deploy Flutter Web to GitHub Pages
 on:
   push:
     branches: [main]
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -26,7 +27,7 @@ jobs:
       - name: Flutter pub get
         run: flutter pub get
       - name: Build web
-        run: flutter build web --release --base-href "/luis-cv/"
+        run: flutter build web --release --base-href "/Portafolio/"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
