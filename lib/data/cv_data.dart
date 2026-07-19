@@ -1,5 +1,5 @@
 // Fuente única de verdad para el contenido del CV y la configuración del chatbot.
-const String chatbotUrl = 'https://luis-cv-chatbot.USUARIO.workers.dev';
+const String chatbotUrl = 'https://twilight-rain-7f04.luiscsuarez89.workers.dev/';
 
 class PersonalInfo {
   const PersonalInfo({
