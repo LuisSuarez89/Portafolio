@@ -27,7 +27,7 @@ La respuesta debe ser:
 
 ```bash
 flutter pub get
-flutter build web --release --base-href "/luis-cv/"
+flutter build web --release --base-href "/Portafolio/"
 ```
 
 Luego habilita GitHub Pages en el repositorio y usa GitHub Actions como fuente de despliegue. También puedes ejecutar manualmente el workflow **Deploy Flutter Web to GitHub Pages** desde la pestaña Actions después de subir el proyecto a `main`.
