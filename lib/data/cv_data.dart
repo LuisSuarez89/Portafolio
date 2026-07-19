@@ -96,6 +96,7 @@ const certifications = [
 const skillCategories = [
   SkillCategory(name: 'Datos & BI', skills: ['SQL', 'PostgreSQL', 'Power BI', 'Metabase', 'DAX']),
   SkillCategory(name: 'Automatización', skills: ['Retool', 'Python', 'APIs REST', 'Low-code', 'Power Automate']),
+  SkillCategory(name: 'Desarrollo & Analítica', skills: ['Flutter', 'Dart', 'R', 'Python', 'Git', 'GitHub Actions']),
   SkillCategory(name: 'Cloud & Metodologías', skills: ['Azure (AZ-900)', 'ITIL 4', 'Scrum', 'Git', 'GitHub Actions']),
-  SkillCategory(name: 'IA aplicada', skills: ['Groq API', 'Prompt Engineering', 'LLM integration']),
+  SkillCategory(name: 'IA aplicada', skills: ['Groq API', 'Prompt Engineering', 'LLM integration', 'Chatbots IA', 'Automatización con IA']),
 ];
