@@ -6,7 +6,10 @@ import '../theme/app_theme.dart';
 import '../widgets/section_title.dart';
 
 class ProjectsSection extends StatelessWidget {
-  const ProjectsSection({super.key});
+  const ProjectsSection({super.key, required this.projects, required this.text});
+
+  final List<Project> projects;
+  final UiText text;
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +18,7 @@ class ProjectsSection extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const SectionTitle('Proyectos', icon: Icons.folder_copy_outlined),
+          SectionTitle(text.projects, icon: Icons.folder_copy_outlined),
           const SizedBox(height: 24),
           LayoutBuilder(
             builder: (context, constraints) {
@@ -30,7 +33,7 @@ class ProjectsSection extends StatelessWidget {
                   projects.length,
                   (index) => SizedBox(
                     width: cardWidth,
-                    child: _ProjectCard(project: projects[index])
+                    child: _ProjectCard(project: projects[index], text: text)
                         .animate(delay: (100 * index).ms)
                         .fadeIn(duration: 500.ms)
                         .slideY(begin: .12, curve: Curves.easeOutCubic),
@@ -46,9 +49,10 @@ class ProjectsSection extends StatelessWidget {
 }
 
 class _ProjectCard extends StatefulWidget {
-  const _ProjectCard({required this.project});
+  const _ProjectCard({required this.project, required this.text});
 
-  final Map<String, dynamic> project;
+  final Project project;
+  final UiText text;
 
   @override
   State<_ProjectCard> createState() => _ProjectCardState();
@@ -59,8 +63,8 @@ class _ProjectCardState extends State<_ProjectCard> {
 
   @override
   Widget build(BuildContext context) {
-    final stack = widget.project['stack'] as List<String>;
-    final github = Uri.parse(widget.project['github'] as String);
+    final stack = widget.project.stack;
+    final github = Uri.parse(widget.project.github);
 
     return InkWell(
       borderRadius: BorderRadius.circular(20),
@@ -85,11 +89,11 @@ class _ProjectCardState extends State<_ProjectCard> {
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(widget.project['icono'] as String, style: const TextStyle(fontSize: 28)),
+                Text(widget.project.icon, style: const TextStyle(fontSize: 28)),
                 const SizedBox(width: 12),
                 Expanded(
                   child: Text(
-                    widget.project['nombre'] as String,
+                    widget.project.name,
                     style: Theme.of(context).textTheme.titleLarge,
                   ),
                 ),
@@ -100,7 +104,7 @@ class _ProjectCardState extends State<_ProjectCard> {
               duration: 220.ms,
               curve: Curves.easeInOut,
               child: Text(
-                widget.project['descripcion'] as String,
+                widget.project.description,
                 maxLines: expanded ? null : 3,
                 overflow: expanded ? TextOverflow.visible : TextOverflow.ellipsis,
                 style: Theme.of(context).textTheme.bodyMedium,
@@ -118,7 +122,7 @@ class _ProjectCardState extends State<_ProjectCard> {
               child: TextButton.icon(
                 onPressed: () => launchUrl(github, mode: LaunchMode.externalApplication),
                 icon: const Icon(Icons.open_in_new, size: 18),
-                label: const Text('Ver en GitHub'),
+                label: Text(widget.text.githubButton),
                 style: TextButton.styleFrom(foregroundColor: AppColors.teal),
               ),
             ),

@@ -6,7 +6,10 @@ import '../widgets/section_title.dart';
 import '../widgets/skill_chip.dart';
 
 class SkillsSection extends StatelessWidget {
-  const SkillsSection({super.key});
+  const SkillsSection({super.key, required this.categories, required this.text});
+
+  final List<SkillCategory> categories;
+  final UiText text;
 
   @override
   Widget build(BuildContext context) {
@@ -15,33 +18,15 @@ class SkillsSection extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const SectionTitle('Skills', icon: Icons.bolt_outlined),
+          SectionTitle(text.skills, icon: Icons.bolt_outlined),
           const SizedBox(height: 24),
-          ...skillCategories.map((cat) {
+          ...categories.map((cat) {
             return Container(
               width: double.infinity,
               margin: const EdgeInsets.only(bottom: 16),
               padding: const EdgeInsets.all(20),
-              decoration: BoxDecoration(
-                color: AppColors.card,
-                border: Border.all(color: AppColors.border),
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    cat.name,
-                    style: Theme.of(context).textTheme.titleLarge?.copyWith(color: AppColors.teal),
-                  ),
-                  const SizedBox(height: 14),
-                  Wrap(
-                    spacing: 10,
-                    runSpacing: 10,
-                    children: cat.skills.map(SkillChip.new).toList(),
-                  ),
-                ],
-              ),
+              decoration: BoxDecoration(color: AppColors.card, border: Border.all(color: AppColors.border), borderRadius: BorderRadius.circular(20)),
+              child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [Text(cat.name, style: Theme.of(context).textTheme.titleLarge?.copyWith(color: AppColors.teal)), const SizedBox(height: 14), Wrap(spacing: 10, runSpacing: 10, children: cat.skills.map(SkillChip.new).toList())]),
             );
           }),
         ],
@@ -49,4 +34,3 @@ class SkillsSection extends StatelessWidget {
     ).animate().fadeIn(duration: 500.ms).slideY(begin: .08);
   }
 }
-

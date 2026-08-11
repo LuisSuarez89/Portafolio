@@ -7,7 +7,10 @@ import '../utils/cv_download.dart';
 import '../widgets/section_title.dart';
 
 class ContactSection extends StatefulWidget {
-  const ContactSection({super.key});
+  const ContactSection({super.key, required this.info, required this.text});
+
+  final PersonalInfo info;
+  final UiText text;
 
   @override
   State<ContactSection> createState() => _ContactSectionState();
@@ -31,10 +34,10 @@ class _ContactSectionState extends State<ContactSection> {
   Future<void> _send() async {
     final uri = Uri(
       scheme: 'mailto',
-      path: personalInfo.email,
+      path: widget.info.email,
       queryParameters: {
-        'subject': 'Contacto desde portafolio - ${name.text}',
-        'body': 'Nombre: ${name.text}\nEmail: ${email.text}\n\n${message.text}',
+        'subject': '${widget.text.mailSubject} - ${name.text}',
+        'body': '${widget.text.mailBodyName}: ${name.text}\n${widget.text.mailBodyEmail}: ${email.text}\n\n${message.text}',
       },
     );
     await launchUrl(uri);
@@ -47,7 +50,7 @@ class _ContactSectionState extends State<ContactSection> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const SectionTitle('Contacto', icon: Icons.mail_outline),
+          SectionTitle(widget.text.contact, icon: Icons.mail_outline),
           const SizedBox(height: 24),
           FilledButton.icon(
             onPressed: _downloadCv,
@@ -61,7 +64,7 @@ class _ContactSectionState extends State<ContactSection> {
               ),
             ),
             icon: const Icon(Icons.download_rounded),
-            label: const Text('Descargar CV'),
+            label: Text(widget.text.downloadCv),
           ),
           const SizedBox(height: 24),
           Container(
@@ -73,31 +76,31 @@ class _ContactSectionState extends State<ContactSection> {
             ),
             child: Column(
               children: [
-                TextField(controller: name, decoration: const InputDecoration(labelText: 'Nombre')),
-                TextField(controller: email, decoration: const InputDecoration(labelText: 'Email')),
+                TextField(controller: name, decoration: InputDecoration(labelText: widget.text.nameField)),
+                TextField(controller: email, decoration: InputDecoration(labelText: widget.text.emailField)),
                 TextField(
                   controller: message,
                   minLines: 4,
                   maxLines: 6,
-                  decoration: const InputDecoration(labelText: 'Mensaje'),
+                  decoration: InputDecoration(labelText: widget.text.messageField),
                 ),
                 const SizedBox(height: 18),
                 FilledButton.icon(
                   onPressed: _send,
                   icon: const Icon(Icons.send),
-                  label: const Text('Enviar por email'),
+                  label: Text(widget.text.sendEmail),
                 ),
                 const SizedBox(height: 18),
                 Wrap(
                   spacing: 12,
                   children: [
                     OutlinedButton.icon(
-                      onPressed: () => launchUrl(Uri.parse(personalInfo.linkedin)),
+                      onPressed: () => launchUrl(Uri.parse(widget.info.linkedin)),
                       icon: const Icon(Icons.business),
                       label: const Text('LinkedIn'),
                     ),
                     OutlinedButton.icon(
-                      onPressed: () => launchUrl(Uri.parse(personalInfo.github)),
+                      onPressed: () => launchUrl(Uri.parse(widget.info.github)),
                       icon: const Icon(Icons.code),
                       label: const Text('GitHub'),
                     ),

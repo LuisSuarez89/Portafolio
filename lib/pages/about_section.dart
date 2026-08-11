@@ -7,15 +7,19 @@ import '../widgets/section_title.dart';
 const _profileImagePath = 'assets/images/foto_perfil.png';
 
 class AboutSection extends StatelessWidget {
-  const AboutSection({super.key});
+  const AboutSection({super.key, required this.info, required this.text});
+
+  final PersonalInfo info;
+  final UiText text;
+
   @override
   Widget build(BuildContext context) => _Wrap(child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        const SectionTitle('Sobre mí', icon: Icons.person_outline), const SizedBox(height: 28),
+        SectionTitle(text.about, icon: Icons.person_outline), const SizedBox(height: 28),
         Wrap(spacing: 28, runSpacing: 22, crossAxisAlignment: WrapCrossAlignment.center, children: [
           _ProfileAvatar(radius: MediaQuery.sizeOf(context).width > 900 ? 60 : 48),
-          ConstrainedBox(constraints: const BoxConstraints(maxWidth: 760), child: Text(personalInfo.profile, style: Theme.of(context).textTheme.bodyLarge)),
+          ConstrainedBox(constraints: const BoxConstraints(maxWidth: 760), child: Text(info.profile, style: Theme.of(context).textTheme.bodyLarge)),
         ]), const SizedBox(height: 22),
-        const Wrap(spacing: 12, children: [_Badge('Remoto ✓'), _Badge('Híbrido ✓')]),
+        Wrap(spacing: 12, children: [_Badge(text.remote), _Badge(text.hybrid)]),
       ]).animate().fadeIn(duration: 500.ms).slideY(begin: .08));
 }
 
