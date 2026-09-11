@@ -101,8 +101,8 @@ const experiencesEn = [
   Experience(role: 'IT Support Analyst', company: 'System Technology Solutions (TSS)', period: 'Jun 2016 – Apr 2017', achievements: ['Executed equipment migration projects, infrastructure updates, and technical support for several company clients and organizations']),
 ];
 
-const education = [Education(title: 'Ingeniería de Sistemas', institution: 'Fundación Universitaria Konrad Lorenz', period: 'Jul 2017 – Dic 2021'), Education(title: 'Técnico en Programación de Software', institution: 'SENA', period: 'Abr 2014 – Abr 2015')];
-const educationEn = [Education(title: 'Systems Engineering', institution: 'Fundación Universitaria Konrad Lorenz', period: 'Jul 2017 – Dec 2021'), Education(title: 'Software Programming Technician', institution: 'SENA', period: 'Apr 2014 – Apr 2015')];
+const education = [Education(title: 'Máster en Análisis y Visualización de Datos Aplicados', institution: 'Universitat Oberta de Catalunya', period: 'Sep 2026 – Actualidad'), Education(title: 'Ingeniería de Sistemas', institution: 'Fundación Universitaria Konrad Lorenz', period: 'Jul 2017 – Dic 2021'), Education(title: 'Técnico en Programación de Software', institution: 'SENA', period: 'Abr 2014 – Abr 2015')];
+const educationEn = [Education(title: "Master's in Applied Data Analysis and Visualization", institution: 'Universitat Oberta de Catalunya', period: 'Sep 2026 – Present'), Education(title: 'Systems Engineering', institution: 'Fundación Universitaria Konrad Lorenz', period: 'Jul 2017 – Dec 2021'), Education(title: 'Software Programming Technician', institution: 'SENA', period: 'Apr 2014 – Apr 2015')];
 
 const certifications = [Certification(name: 'Scrum Fundamentals Certified (SFC)', issuer: 'SCRUMstudy', date: 'Feb 2026'), Certification(name: 'Microsoft Azure Fundamentals (AZ-900)', issuer: 'Microsoft', date: '2026'), Certification(name: 'ITIL 4 Foundation', issuer: 'Udemy', date: '2026'), Certification(name: 'Elements of AI', issuer: 'University of Helsinki & MinnaLearn', date: 'Jun 2026')];
 const certificationsEn = certifications;
